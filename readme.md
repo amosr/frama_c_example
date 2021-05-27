@@ -1,5 +1,18 @@
 # Verifying stuff with Frama-C
 
+This is a very small example of using Frama-C to verify some list code.
+This repo is supplementary material for a talk I did at the Functional Programming user group of Sydney (FP-Syd).
+
+## Talk abstract
+
+Pure functional programming is great for writing programs that are easy to reason about.
+Unfortunately, it's not always great at running those programs in restricted environments.
+What do we do when we need to reason about programs, but can't afford the runtime overhead of a garbage collector or memory allocator, and we don't want to alienate the systems engineers?
+One option is to write a pure (but not necessarily functional) specification and prove that the C implementation refines it.
+This is the premise of Frama-C.
+
+In this talk I'll show off some of the fun I've been having verifying safety-critical C code with Frama-C, and why I think it's more practical than other automated theorem provers. 
+
 ## Installing dependencies
 First, make sure you have [opam installed](https://opam.ocaml.org/doc/Install.html) and up-to-date.
 ```
