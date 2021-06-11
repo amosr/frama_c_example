@@ -2,7 +2,7 @@
 WHY3CONFIG        ?= .why3.conf
 FRAMAC_PROVERS    ?= cvc4
 FRAMAC_TOP        ?= full.c
-
+FRAMAC_STRATS     ?= -wp-auto wp:bitrange,wp:bitshift,wp:bittestrange,wp:bitwised,wp:congruence,wp:range,wp:replace,wp:split -wp-auto-depth 20 -wp-auto-width 32
 FRAMAC_TIMEOUT    ?= 10
 
 
@@ -10,6 +10,7 @@ OPTS=-wp-prover $(FRAMAC_PROVERS) \
      -wp-rte -wp-no-warn-memory-model \
      -wp-session session \
      $(FRAMAC_TOP) \
+     $(FRAMAC_STRATS)
 
 # Replay existing proof scripts
 REPLAY=-wp-prover script
