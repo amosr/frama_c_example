@@ -15,12 +15,12 @@ OPTS=-wp-prover $(FRAMAC_PROVERS) \
 REPLAY=-wp-prover script
 # Use tip prover to save the proof scripts.
 # Also enable the wp_ignore for the GUI, as otherwise the GUI complains if you look at the ignored functions
-GUI=-wp-prover tip -no-wp_ignore
+GUI=-wp-prover tip
 
 .PHONY: check
 # Check all of the proof obligations
 check:
-	WHY3CONFIG=${WHY3CONFIG} frama-c -wp $(REPLAY) $(OPTS) -wp-report session/last-run.rspec -wp-timeout $(FRAMAC_TIMEOUT) $(EXTRA)
+	WHY3CONFIG=${WHY3CONFIG} frama-c -wp $(REPLAY) $(OPTS) -wp-timeout $(FRAMAC_TIMEOUT) $(EXTRA)
 
 .PHONY: gui
 # Open the GUI
